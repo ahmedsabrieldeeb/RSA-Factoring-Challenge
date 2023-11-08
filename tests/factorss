@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+import sys
+
+def parse_file(filename):
+    try:
+        with open(filename, 'r') as file:
+            for line in file:
+                # Process each line as needed
+                print(line, end='')
+
+    except FileNotFoundError:
+        print(f"File '{filename}' not found.")
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python parse_file.py <filename>")
+    else:
+        filename = sys.argv[1]
+        parse_file(filename)
